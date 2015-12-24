@@ -1,4 +1,4 @@
-package com.amdocs.servlet.app;
+package com.mdiaz.servlet.app;
 
 import static org.eclipse.jetty.servlet.ServletContextHandler.NO_SESSIONS;
 

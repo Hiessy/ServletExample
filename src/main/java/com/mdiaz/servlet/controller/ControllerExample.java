@@ -1,4 +1,4 @@
-package com.amdocs.servlet.controller;
+package com.mdiaz.servlet.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
