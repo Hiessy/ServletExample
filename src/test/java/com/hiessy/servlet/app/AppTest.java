@@ -1,4 +1,4 @@
-package com.amdocs.servlet.app;
+package com.hiessy.servlet.app;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
