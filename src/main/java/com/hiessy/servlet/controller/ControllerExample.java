@@ -3,6 +3,7 @@ package com.hiessy.servlet.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,20 +23,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/example")
 public class ControllerExample {
 
-    @RequestMapping(value = "/method1/{var}", method = RequestMethod.GET)     
-    @ResponseBody
-    public String listenerPathTest(@PathVariable String var) throws Exception{    	
+	@RequestMapping(value = "/method1/{var}", method = RequestMethod.GET)
+	@ResponseBody
+	public String listenerPathTest(@PathVariable String var) throws Exception {
+		
+		return "this is a test" + var;
+	}
 
-    	return "this is a test" + var;
-    }
-    
-    @RequestMapping(value = "/method2", method = RequestMethod.GET)     
-  	@ResponseBody
-  	public void listenerPathTest(HttpServletRequest request, HttpServletResponse response) throws Exception{
-  
-    	System.out.println("Accesed method");
-    	response.setHeader("success", null);
-    	
-    }
+	@RequestMapping(value = "/method2", method = RequestMethod.GET)
+	@ResponseBody
+	public HttpServletResponse listenerPathTest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		response.setStatus(200);
+		response.setHeader("CostumHeader", "Hello 12345");
+		return response;
+
+	}
 
 }
