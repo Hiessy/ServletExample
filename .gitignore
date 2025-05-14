@@ -1,1 +1,9 @@
 /target/
+# Default ignored files
+/shelf/
+/workspace.xml
+.idea/
+.settings/
+target/
+.classpath
+.project
