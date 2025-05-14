@@ -1,9 +1,5 @@
 package com.hiessy.servlet.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,16 +24,6 @@ public class ControllerExample {
 	public String listenerPathTest(@PathVariable String var) throws Exception {
 		
 		return "this is a test" + var;
-	}
-
-	@RequestMapping(value = "/method2", method = RequestMethod.GET)
-	@ResponseBody
-	public HttpServletResponse listenerPathTest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		response.setStatus(200);
-		response.setHeader("CostumHeader", "Hello 12345");
-		return response;
-
 	}
 
 }
